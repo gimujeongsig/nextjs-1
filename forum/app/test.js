@@ -1,5 +1,8 @@
-import {MongoClient} from "mongodb";
-
-const client = await MongoClient.connect('mongodb+srv://ququrubingbong:<password>@minjun.t3ouqvy.mongodb.net/?retryWrites=true&w=majority&appName=MinJun',{useNewUrlParser:true})
-const db = client.db("forum");
-db.collection('post').find();
+export default function handler(요청,응답) {
+    if (요청.method=='GET') {
+        응답.status(200).json({name : 'GET입니다'});
+    }
+    if (요청.method== 'POST') {
+        응답.status(200).json({name : 'POST입니다'});
+    }
+}
